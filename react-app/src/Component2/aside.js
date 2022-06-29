@@ -3,6 +3,7 @@ import c1 from '../img/c1.png';
 import c2 from '../img/c2.png';
 import c3 from '../img/c3.png';
 
+//주석추가2
 class Aside extends Component {
     render() {
       return (

@@ -22,7 +22,7 @@ import Footer from "./Component2/footer";
 //   }
 // }
 
-  //주석추가
+  //주석추가1
   class App extends Component{
     render(){
       return (

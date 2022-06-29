@@ -22,6 +22,7 @@ import Footer from "./Component2/footer";
 //   }
 // }
 
+  //주석추가
   class App extends Component{
     render(){
       return (

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+
+//주석2
 class Footer extends Component {
     render() {
       return (

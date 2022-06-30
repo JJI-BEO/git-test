@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
 }
 
@@ -32,20 +32,13 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
-} */
+}
 
-body{
-  background-color: aqua; 
-} 
-
-
-
-
-
-
-
-
-
+body {
+  background-color: aqua;
+  margin-left: 20px;
+}

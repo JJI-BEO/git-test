@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-
+import React, { Component } from "react";
 
 class ReadContent extends Component {
+
     render() {
-        console.log('ReadContent render run')
         return (
             <article>
                 <h2>{this.props.title}</h2>
-                {this.props.desc}
+                {this.props.sub}
             </article>
         )
-    };
+    }
 }
-
 export default ReadContent;

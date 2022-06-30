@@ -1,20 +1,30 @@
 import React, { Component } from "react";
 
 class Toc extends Component {
-    render() {
+  render() {
+    console.log("Toc render");
 
-      let lists = [];
-      let data = this.props.data;
-      let i = 0;
+    let lists = [];
+    let data = this.props.data;
+    let i = 0;
 
-      while(i < data.length){
-        lists.push(<li>
-          <a href={"/content/"+data[i].id}>
-            {data[i].title}
-          </a>
-          </li>);
-            i = i+1;
-      }
+    while (i < data.length) {
+      lists.push(<li key={data[i].id}>
+
+         <a
+        href={"/content/" + data[i].id}
+        data-id={data[i].id}
+        onClick={function (e) {
+          e.preventDefault();
+          this.props.onChangePage(e.target.dataset.id); // 온클릭되는 요소의 데이터셋 id 값 
+        }.bind(this)}
+      >
+        {data[i].title}
+      </a>
+
+      </li>);
+      i = i + 1;
+    }
 
       return (
 
@@ -23,7 +33,7 @@ class Toc extends Component {
             {lists}
           </ul>
         </nav>
-
+ 
         // <nav>
         //   <ul>
         //     <li>

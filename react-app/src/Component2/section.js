@@ -18,7 +18,7 @@ class Section extends Component {
                 <h3>강아지 밥그릇</h3>
                 <p>밥그릇</p>
             </article>
-            <article class="ati4">
+            <article class="ati4"> 
                 <h3>강아지 장난감</h3>
                 <p>장난감</p>
             </article>

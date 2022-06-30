@@ -16,4 +16,4 @@ class Aside extends Component {
     }
   }
 
-  export default Aside;
+  export default Aside; 

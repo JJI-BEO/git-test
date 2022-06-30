@@ -5,8 +5,9 @@ import "./App.css";
 import React, { Component } from "react";
 import Toc from "./Component/TOC";
 import Subject from "./Component/Subject";
-import Content from "./Component/Content";
+import ReadContent from "./Component/ReadContent";
 import Crud from "./Component/crud";
+import CreateContent from "./Component/CreateContent";
 
 // import Header from "./Component2/header";
 // import Section from "./Component2/section";
@@ -82,7 +83,7 @@ import Crud from "./Component/crud";
     }
     render() {
       console.log("app render");
-      let _title, _desc = null;
+      let _title, _desc, _article = null;
       if(this.state.mode === "welcome"){
         _title = this.state.welcome.title;
         _desc = this.state.welcome.desc;
@@ -96,11 +97,14 @@ import Crud from "./Component/crud";
           if(data.id === this.state.selected_content_id){
             _title = data.title;
             _desc = data.desc;
+            
             break;
           }
           i = i+1;
         }
-      }
+        _article = <ReadContent title={_title} desc={_desc} /> 
+        // 이거처럼 mode가 create일때 넣어주시면되요
+      } 
       return (
         <>
 
@@ -127,7 +131,7 @@ import Crud from "./Component/crud";
            />
           
             <Crud onChangeMode={function(_mode){
-              
+            
               this.setState({
                 mode:_mode
               })
@@ -138,7 +142,8 @@ import Crud from "./Component/crud";
            
 
           {/* <Content title="HTML" desc="HTML is HyperText Markup Language" />   */}
-          <Content title={_title} desc={_desc} />
+          {_article}
+          <CreateContent />
         </>
       ); 
     }

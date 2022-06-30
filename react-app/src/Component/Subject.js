@@ -35,7 +35,7 @@ class Subject extends Component {
     console.log("Subject render");
     return (
       <header>
-        <h1><a href="#" 
+        <h1><a href="#1" 
         onClick={function(e){
         e.preventDefault();
         this.props.onChangePage();  
@@ -45,10 +45,6 @@ class Subject extends Component {
     );
   }
 }
-
-    
-
-
 
   
  

@@ -8,6 +8,7 @@ import Subject from "./Component/Subject";
 import ReadContent from "./Component/ReadContent";
 import Crud from "./Component/crud";
 import CreateContent from "./Component/CreateContent";
+import Update from "./Component/Update";
 
 // import Header from "./Component2/header";
 // import Section from "./Component2/section";
@@ -69,6 +70,7 @@ import CreateContent from "./Component/CreateContent";
   class App extends Component{
     constructor(props){
       super(props);
+      this.max_content_id = 3;
       this.state = {
         mode:"read",
         selected_content_id : 0,
@@ -103,8 +105,24 @@ import CreateContent from "./Component/CreateContent";
           i = i+1;
         }
         _article = <ReadContent title={_title} desc={_desc} /> 
-        // 이거처럼 mode가 create일때 넣어주시면되요
-      } 
+        
+      }else if(this.state.mode ==='create'){
+        _article = <CreateContent onSubmit={function(_title,_desc){
+        this.max_content_id = this.max_content_id + 1;
+        this.state.contents.push(
+          {id:this.max_content_id, title:_title,desc:_desc}
+        );
+        // let _concat = this.state.contents.concat(
+        //         {id:this.max_content_id, title:_title,desc:_desc}
+        // );
+        
+        this.setState({
+          contents : this.state.contents
+          //  contents : _concat 
+        });
+      }.bind(this)}
+        />
+      }
       return (
         <>
 
@@ -136,14 +154,12 @@ import CreateContent from "./Component/CreateContent";
                 mode:_mode
               })
             }.bind(this)}
-            
             />
           
-           
-
+      
           {/* <Content title="HTML" desc="HTML is HyperText Markup Language" />   */}
           {_article}
-          <CreateContent />
+          <Update />
         </>
       ); 
     }

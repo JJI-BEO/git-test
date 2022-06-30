@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
-class CreateContent extends Component {
+
+class Update extends Component {
     render() {
+        console.log("Update render");
         return (
             <article>
                 <h2>Create</h2>
@@ -28,4 +30,4 @@ class CreateContent extends Component {
     }
 }
 
-export default CreateContent;
+export default Update;

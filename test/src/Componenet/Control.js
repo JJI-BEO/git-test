@@ -1,20 +1,19 @@
 import React, { Component } from "react";
 
-class Subject extends Component {
+class Control extends Component {
 
     render() {
         return (
             <ul>
                 <li>
                     <a
-                        href="/creat"
+                        href="/Insert"
                         onClick={(e) => { 
                             e.preventDefault();
-                            this.props.onChangeMode('create')
+                            this.props.onChangeMode('insert')
                         }}
-                    >create</a>
+                    >Insert</a>
                 </li>
-              
                 <li>
                     <a
                         href="/update"
@@ -39,4 +38,4 @@ class Subject extends Component {
     }
 }
  
-export default Subject;
+export default Control;

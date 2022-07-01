@@ -28,4 +28,4 @@ class CreateContent extends Component {
 
     }
 }
-export default CreateContent;
+export default CreateContent; 

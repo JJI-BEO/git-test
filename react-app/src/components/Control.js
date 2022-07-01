@@ -8,12 +8,13 @@ class Subject extends Component {
                 <li>
                     <a
                         href="/creat"
-                        onClick={(e) => {
+                        onClick={(e) => { 
                             e.preventDefault();
                             this.props.onChangeMode('create')
                         }}
                     >create</a>
                 </li>
+              
                 <li>
                     <a
                         href="/update"
@@ -27,6 +28,10 @@ class Subject extends Component {
                     <input
                         type="button"
                         value='delete'
+                        onClick={(e) => {
+                            e.preventDefault();
+                            this.props.onChangeMode('delete')
+                        }}
                     ></input>
                 </li>
             </ul >

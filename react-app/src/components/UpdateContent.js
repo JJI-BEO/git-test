@@ -17,7 +17,7 @@ class UpdateContent extends Component {
   render() {
     console.log("업데이트");
     return (
-      <article class="content">
+      <article>
         <h2>update</h2>
         <form
           action="/create_process"

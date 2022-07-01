@@ -106,6 +106,9 @@ class App extends Component {
 
     return (
       <div>
+
+        {/* Subject Start */}
+
         <Subject
           title={this.state.subject.title}
           sub={this.state.subject.sub}
@@ -113,6 +116,10 @@ class App extends Component {
             this.setState({ mode: 'welcome' });
           }.bind(this)}
         ></Subject>
+
+        {/* Subject End */}
+
+        {/* TOC start */}
 
         <TOC
           data={this.state.contents}
@@ -127,16 +134,55 @@ class App extends Component {
           }.bind(this)}
         />
 
-        <Control
+        {/* TOC END */}
+
+        {/* Control Start */}
+
+        {/* <Control
           onChangeMode={(e) => {
             this.setState({
               mode: e
             })
           }}
+        > */}
+
+        <Control
+          onChangeMode={function(_mode){
+            if (_mode === 'delete') {
+              if (window.confirm('really?')) {
+                let _contents = Array.from(this.state.contents);
+                let i = 0;
+                while (i < _contents.length) {
+                  if (_contents[i].id === this.state.selected_content_id) {
+                    _contents.splice(i, 1);
+                    break;
+                  }
+                  i = i + 1;
+                }
+                this.setState({
+                  mode: 'welcome',
+                  contents: _contents
+                })
+
+              } 
+
+            } else {
+              this.setState({
+                mode: _mode
+              })
+            }
+          }.bind(this)}
         >
 
+
         </Control>
+          {/* Control End */}
+
+          {/* Content Start */}
+          
         {this.getContent()}
+
+          {/* Content End */}
       </div>
     )
   }
